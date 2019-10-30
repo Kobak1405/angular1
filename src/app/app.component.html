@@ -1,0 +1,29 @@
+<div>
+  <button (click)="loginClc()">LOGIN ME</button>
+  <button (click)="registerClc()">REGISTER ME</button>
+</div>
+
+<div *ngIf="isLoginClicked">
+  <app-login></app-login>
+</div>
+
+<div *ngIf="isRegisterClicked">
+  <app-register></app-register>
+</div>
+
+<br />
+<h1>Search</h1>
+<input type="text" (input)="input($event)" />
+<button (click)="show()">Search</button>
+<h3>{{ valueToSend }}</h3>
+
+<br />
+
+<div *ngFor="let flat of flats" style=" border: solid red;">
+  City: {{ flat.city }}
+  <br />
+  Price: {{ flat.price }}
+  <br />
+  Squere metres: {{ flat.sqM }}
+  <br />
+</div>
